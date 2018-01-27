@@ -10,5 +10,11 @@ namespace SimpleGenerics
     {
         public string Brand { get; set; }
         public double ScreenSize { get; set; }
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            return $"Brand: {Brand}\nScreenSize: {ScreenSize}";
+        }
     }
 }

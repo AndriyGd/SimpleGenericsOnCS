@@ -45,6 +45,29 @@ namespace SimpleGenerics
             //mc.Print(); 
             #endregion
 
+            var repository = new Repository();
+
+            var phones = repository.GetItemsBy<Phone>();
+            var notes = repository.GetItemsBy<Notebook>();
+
+            //Console.WriteLine("Pnones");
+            //phones.ForEach(Console.WriteLine);
+
+            Console.WriteLine("\nNotebooks");
+            notes.ForEach(Console.WriteLine);
+
+            //var items = repository.GetItemsBy<Phone>("qqq");
+            //Console.WriteLine("Items by 'Brand'");
+            //items.ForEach(Console.WriteLine);
+            var note = new Notebook
+            {
+                Brand = "vbn",
+                ScreenSize = 15.9
+            };
+            //Тип визначається автоматично в залежності від
+            //типу параметра. repository.AddItem<Notebook>(note);
+            repository.AddItem(note);
+            repository.GetItemsBy<Notebook>().ForEach(Console.WriteLine);
             Console.ReadKey();
         }
     }

@@ -14,5 +14,10 @@ namespace SimpleGenerics
 
         public double Price { get; set; }
         public int ManagerId { get; set; }
+
+        public override string ToString()
+        {
+            return $"Brand: {Brand}\nModel: {Model}\nPrice: {Price}";
+        }
     }
 }
